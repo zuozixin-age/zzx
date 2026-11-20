@@ -157,10 +157,12 @@ function pumpLoader() {
     }
     return;
   }
-  // 滚动中不再全停：降为 2 条并发给位图窗口让带宽，但保持播放头附近持续补帧；
-  // 静止时恢复 6 条。预载计数口径不变。
+  // 带宽优先级（第二档，2026-11-20 晚）：滚动真正显示的是半幅位图窗口，全幅后台
+  // 补帧只为静止清晰度——滚动中全幅让行（0 条），窗口忙时最多 1 条，静止且窗口
+  // 空闲时 6 条全开。预载计数口径不变。
   const scrolling = performance.now() - lastProgressChangeAt < 200;
-  const limit = scrolling ? 2 : loader.concurrency;
+  const bmpBusy = bmpActive > 0 || bmpQueue.length > 0;
+  const limit = scrolling ? 0 : (bmpBusy ? 1 : loader.concurrency);
   while (loader.active < limit && loader.queue.length) {
     let bi = 0, bs = Infinity;
     for (let i = 0; i < loader.queue.length; i++) {
