@@ -105,6 +105,7 @@ function buildLoadPlan() {
     const bi = branchIndex[b.id];
     for (let i = 0; i < bi.count; i++) plan.push(planItem('branch', b.id, i, frameURL(bi, i), {}));
   }
+  plan.forEach((it, i) => { it.planOrder = i; });
   return plan;
 }
 function loadOne(item) {
@@ -127,23 +128,51 @@ function loadOne(item) {
   });
 }
 let pumpTimer = null;
+function onLoaderSettled(item) {
+  loader.active--; loader.settled++;
+  updateLoadUI(item);
+  if (!loader.mainlineReady) checkGate();
+  if (loader.settled >= loader.total) { loader.allDone = true; updateLoadUI(null); }
+  pumpLoader();
+}
+// 播放头优先评分（慢网络补丁，2026-11-20）：后台加载不再死守 M01→M10 顺序，
+// 而是优先补当前帧附近的帧——用户滚到哪儿，哪儿先就绪；poster/anchor 仍最优先
+// （入口门与兜底需要），支线帧按其锚点与当前帧的距离排队。
+function itemScore(item) {
+  if (item.kind === 'poster' || item.kind === 'anchor') return -1e9 + (item.planOrder || 0);
+  const cur = state.currentFrame || 0;
+  if (item.kind === 'branch') {
+    const a = (state.manifest.anchors || []).find(x => x.branchId === item.id);
+    const anchorG = a ? a.globalRange[0] : 0;
+    return 1e6 + Math.abs(anchorG - cur) + (item.local || 0);
+  }
+  return Math.abs((item.globalFrame ?? 0) - cur);
+}
 function pumpLoader() {
-  // 滚动进行中（最近 200ms 内进度变过）暂停启动新的后台加载，避免 6 并发解码与滚动抢主线程；
-  // 预载计数不受影响，只是把解码推迟到滚动间歇。
-  if (!LEGACY && !loader.allDone && loader.queue.length && performance.now() - lastProgressChangeAt < 200) {
-    if (!pumpTimer) pumpTimer = setTimeout(() => { pumpTimer = null; pumpLoader(); }, 200);
+  if (LEGACY) { // ?legacy=1 保持原行为：FIFO、滚动不暂停
+    while (loader.active < loader.concurrency && loader.queue.length) {
+      const item = loader.queue.shift();
+      loader.active++;
+      loadOne(item).then(() => onLoaderSettled(item));
+    }
     return;
   }
-  while (loader.active < loader.concurrency && loader.queue.length) {
-    const item = loader.queue.shift();
+  // 滚动中不再全停：降为 2 条并发给位图窗口让带宽，但保持播放头附近持续补帧；
+  // 静止时恢复 6 条。预载计数口径不变。
+  const scrolling = performance.now() - lastProgressChangeAt < 200;
+  const limit = scrolling ? 2 : loader.concurrency;
+  while (loader.active < limit && loader.queue.length) {
+    let bi = 0, bs = Infinity;
+    for (let i = 0; i < loader.queue.length; i++) {
+      const sc = itemScore(loader.queue[i]);
+      if (sc < bs) { bs = sc; bi = i; }
+    }
+    const item = loader.queue.splice(bi, 1)[0];
     loader.active++;
-    loadOne(item).then(() => {
-      loader.active--; loader.settled++;
-      updateLoadUI(item);
-      if (!loader.mainlineReady) checkGate();
-      if (loader.settled >= loader.total) { loader.allDone = true; updateLoadUI(null); }
-      pumpLoader();
-    });
+    loadOne(item).then(() => onLoaderSettled(item));
+  }
+  if (loader.queue.length && loader.active >= limit && !pumpTimer) {
+    pumpTimer = setTimeout(() => { pumpTimer = null; pumpLoader(); }, 250);
   }
 }
 function urgentLoad(kind, id, local, url, globalFrame) {
@@ -155,10 +184,12 @@ function urgentLoad(kind, id, local, url, globalFrame) {
   img.onerror = () => { cachePut(key, { img: null, ok: false, globalFrame }); if (kind === 'main') state.degraded[id] = true; };
   img.src = url;
 }
+const GATE_FIRST_FRAMES = 120; // 慢网络补丁：入口门只等首段前 120 帧（原为整段 240），其余由播放头优先加载随后补齐
 function checkGate() {
-  // 里程碑 A 门：首段帧 + 全部 poster 结算完毕即可进入
+  // 里程碑 A 门：首段前 GATE_FIRST_FRAMES 帧 + 全部 poster 结算完毕即可进入
   const first = segIndex[0];
-  for (let i = 0; i < first.count; i++) if (!loader.settledKeys.has(cacheKey('main', first.id, i))) return;
+  const need = Math.min(first.count, GATE_FIRST_FRAMES);
+  for (let i = 0; i < need; i++) if (!loader.settledKeys.has(cacheKey('main', first.id, i))) return;
   for (const s of state.manifest.segments) if (!loader.settledKeys.has(cacheKey('poster', s.id, -1))) return;
   loader.mainlineReady = true;
   state.ready = true;
@@ -220,6 +251,16 @@ function queueBitmap(kind, id, local, seg, globalFrame, priority) {
 }
 function pumpBmp() {
   while (bmpActive < BMP_CONCURRENCY && bmpQueue.length) {
+    // 慢网络补丁：优先级按与当前帧的实时距离重算，快速滚动时已被甩到身后
+    // 40 帧以上的过期请求直接丢弃，不再浪费带宽取永远不会显示的帧。
+    const cur = state.currentFrame;
+    for (let i = bmpQueue.length - 1; i >= 0; i--) {
+      const it = bmpQueue[i];
+      if (typeof it.globalFrame !== 'number') continue;
+      if (!state.branch && it.globalFrame < cur - 40) { bmpPending.delete(it.key); bmpQueue.splice(i, 1); }
+      else it.priority = Math.abs(it.globalFrame - cur);
+    }
+    if (!bmpQueue.length) break;
     bmpQueue.sort((a, b) => a.priority - b.priority);
     const item = bmpQueue.shift();
     bmpActive++;
