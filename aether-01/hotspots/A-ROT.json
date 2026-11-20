@@ -1,0 +1,1060 @@
+{
+ "schemaVersion": "1.0",
+ "anchorId": "A-ROT",
+ "segmentId": "M05",
+ "branchId": "B01",
+ "startFrame": 180,
+ "endFrame": 209,
+ "globalStartFrame": 1230,
+ "globalEndFrame": 1259,
+ "coordinateSpace": "normalized 0-1 relative to the 1920x1080 frame; origin top-left; frontend must apply the same contain/cover transform as the displayed frame (see manifest.renderVariants)",
+ "target": "推进舱与旋翼（石墨灰推进舱本体 + 螺旋桨/桨毂组件）",
+ "measurement": "bbox 由执行者亲自查看最终解码锚帧并以视觉定位复核后标定；锚点区间 30 帧为同一锚帧的离线重复（逐帧 md5 一致，见 qc/asset-checks.json），故逐帧坐标恒定为事实而非省略测量。",
+ "parts": [
+  {
+   "name": "nacelleBody",
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.531,
+    "yMax": 0.828
+   }
+  },
+  {
+   "name": "propellerAndSpinner",
+   "bbox": {
+    "xMin": 0.467,
+    "yMin": 0.0,
+    "xMax": 0.719,
+    "yMax": 1.0
+   }
+  }
+ ],
+ "note": "主 bbox = 推进舱本体与桨毂的并集（实心可点击主体）；桨叶为细长运动模糊体，其扫掠区见 parts.propellerAndSpinner，未并入主框以免热点覆盖近乎全幅高度。",
+ "rules": {
+  "visibleVsClickable": "visible=目标在该帧可见；clickable=该帧可触发支线。仅冻结锚点区间 clickable=true，其余主线帧不出现在本文件中。",
+  "onClick": "保存被点击的主线全局帧号 -> 播放支线 -> 支线结束自动回切到保存帧，全局进度不变；支线内禁止再触发热点（无嵌套）。"
+ },
+ "frames": [
+  {
+   "frame": 180,
+   "globalFrame": 1230,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 181,
+   "globalFrame": 1231,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 182,
+   "globalFrame": 1232,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 183,
+   "globalFrame": 1233,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 184,
+   "globalFrame": 1234,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 185,
+   "globalFrame": 1235,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 186,
+   "globalFrame": 1236,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 187,
+   "globalFrame": 1237,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 188,
+   "globalFrame": 1238,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 189,
+   "globalFrame": 1239,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 190,
+   "globalFrame": 1240,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 191,
+   "globalFrame": 1241,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 192,
+   "globalFrame": 1242,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 193,
+   "globalFrame": 1243,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 194,
+   "globalFrame": 1244,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 195,
+   "globalFrame": 1245,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 196,
+   "globalFrame": 1246,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 197,
+   "globalFrame": 1247,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 198,
+   "globalFrame": 1248,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 199,
+   "globalFrame": 1249,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 200,
+   "globalFrame": 1250,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 201,
+   "globalFrame": 1251,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 202,
+   "globalFrame": 1252,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 203,
+   "globalFrame": 1253,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 204,
+   "globalFrame": 1254,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 205,
+   "globalFrame": 1255,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 206,
+   "globalFrame": 1256,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 207,
+   "globalFrame": 1257,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 208,
+   "globalFrame": 1258,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  },
+  {
+   "frame": 209,
+   "globalFrame": 1259,
+   "center": {
+    "x": 0.3595,
+    "y": 0.5485
+   },
+   "bbox": {
+    "xMin": 0.0,
+    "yMin": 0.269,
+    "xMax": 0.719,
+    "yMax": 0.828
+   },
+   "polygon": [
+    {
+     "x": 0.0,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.269
+    },
+    {
+     "x": 0.719,
+     "y": 0.828
+    },
+    {
+     "x": 0.0,
+     "y": 0.828
+    }
+   ],
+   "visible": true,
+   "clickable": true
+  }
+ ]
+}
