@@ -1,0 +1,49 @@
+name: import-assets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets-import/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Import binary assets
+        run: |
+          set -e
+          if [ -f aether-01/main/M01/frames/000000.webp ]; then
+            echo "Assets already present, skipping."
+            exit 0
+          fi
+          if [ ! -f assets-import/urls.txt ]; then
+            echo "assets-import/urls.txt not present yet, skipping."
+            exit 0
+          fi
+          mkdir -p /tmp/assets
+          i=0
+          while IFS= read -r url; do
+            case "$url" in
+              ''|\#*) continue ;;
+            esac
+            i=$((i+1))
+            echo "Downloading part $i"
+            curl -fL --retry 3 "$url" -o "/tmp/assets/part$i.zip"
+            unzip -q -o "/tmp/assets/part$i.zip" -d .
+            rm "/tmp/assets/part$i.zip"
+          done < assets-import/urls.txt
+          echo "Imported file count:"
+          find aether-01 -type f | wc -l
+          git config user.name "AETHER-01 asset import"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -m "Import AETHER-01 binary assets (frames, posters, anchors, sources)"
+          git push
