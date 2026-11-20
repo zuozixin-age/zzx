@@ -1,0 +1,50 @@
+{
+ "schemaVersion": "1.0",
+ "phase": "Phase 03",
+ "date": "2026-11-20",
+ "aircraftIdentityId": "AETHER-01-BIBLE-v1",
+ "humanReadableReport": "qc/acceptance-report.md",
+ "machineChecks": "qc/asset-checks.json",
+ "verdict": "素材包完成，逐项核查通过，带 7 项如实记录的偏差（D-P3-01..07），无静默降级",
+ "sections": {
+  "frameSequences": {
+   "status": "通过",
+   "evidence": "3630 帧全量解码校验（帧数/尺寸/命名），见 asset-checks.frameCounts"
+  },
+  "anchors": {
+   "status": "通过",
+   "evidence": "三锚点区间 30 帧 md5 全等、PNG/WebP 像素 diff=0，见 asset-checks.anchors"
+  },
+  "branchFrame0": {
+   "status": "通过",
+   "evidence": "B01/B02/B03 第 0 帧 md5 = 父锚帧 md5，见 asset-checks.branchFrame0"
+  },
+  "hotspots": {
+   "status": "通过",
+   "evidence": "三份 JSON 各 30 帧 bbox/polygon/visible/clickable，执行者亲视锚帧标定"
+  },
+  "seams": {
+   "status": "通过（记录观感）",
+   "evidence": "9 处接缝目视核查，见 acceptance-report.md 第 5 节与 seam_contact_sheet.png"
+  },
+  "manifestAndContent": {
+   "status": "通过",
+   "evidence": "PDF03 §4 字段清单全 true；参数一律待核实"
+  },
+  "deviations": [
+   "D-P3-01",
+   "D-P3-02",
+   "D-P3-03",
+   "D-P3-04",
+   "D-P3-05",
+   "D-P3-06",
+   "D-P3-07"
+  ],
+  "untested": [
+   "移动端真机热点坐标变换实测（Phase 04 联调）",
+   "前端加载/缓存/滚动性能（Phase 04）",
+   "支线回切运行时行为（Phase 04）"
+  ]
+ },
+ "nextStep": "Phase 04 前端开发与逐项验收（PDF04）"
+}

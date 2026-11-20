@@ -1,0 +1,375 @@
+{
+ "schemaVersion": "1.0",
+ "phase": "Phase 03",
+ "frameCounts": {
+  "perSegment": {
+   "M01": {
+    "count": 240,
+    "target": 240,
+    "count_ok": true,
+    "all_1920x1080": true,
+    "bad": [],
+    "naming_continuous": true
+   },
+   "M02": {
+    "count": 300,
+    "target": 300,
+    "count_ok": true,
+    "all_1920x1080": true,
+    "bad": [],
+    "naming_continuous": true
+   },
+   "M03": {
+    "count": 270,
+    "target": 270,
+    "count_ok": true,
+    "all_1920x1080": true,
+    "bad": [],
+    "naming_continuous": true
+   },
+   "M04": {
+    "count": 240,
+    "target": 240,
+    "count_ok": true,
+    "all_1920x1080": true,
+    "bad": [],
+    "naming_continuous": true
+   },
+   "M05": {
+    "count": 300,
+    "target": 300,
+    "count_ok": true,
+    "all_1920x1080": true,
+    "bad": [],
+    "naming_continuous": true
+   },
+   "M06": {
+    "count": 300,
+    "target": 300,
+    "count_ok": true,
+    "all_1920x1080": true,
+    "bad": [],
+    "naming_continuous": true
+   },
+   "M07": {
+    "count": 360,
+    "target": 360,
+    "count_ok": true,
+    "all_1920x1080": true,
+    "bad": [],
+    "naming_continuous": true
+   },
+   "M08": {
+    "count": 300,
+    "target": 300,
+    "count_ok": true,
+    "all_1920x1080": true,
+    "bad": [],
+    "naming_continuous": true
+   },
+   "M09": {
+    "count": 330,
+    "target": 330,
+    "count_ok": true,
+    "all_1920x1080": true,
+    "bad": [],
+    "naming_continuous": true
+   },
+   "M10": {
+    "count": 360,
+    "target": 360,
+    "count_ok": true,
+    "all_1920x1080": true,
+    "bad": [],
+    "naming_continuous": true
+   },
+   "B01": {
+    "count": 180,
+    "target": 180,
+    "count_ok": true,
+    "all_1920x1080": true,
+    "bad": [],
+    "naming_continuous": true
+   },
+   "B02": {
+    "count": 240,
+    "target": 240,
+    "count_ok": true,
+    "all_1920x1080": true,
+    "bad": [],
+    "naming_continuous": true
+   },
+   "B03": {
+    "count": 210,
+    "target": 210,
+    "count_ok": true,
+    "all_1920x1080": true,
+    "bad": [],
+    "naming_continuous": true
+   }
+  },
+  "total": 3630,
+  "totalExpected": 3630,
+  "totalOk": true,
+  "mainline": 3000,
+  "branches": 630
+ },
+ "resolution": {
+  "expected": "1920x1080",
+  "allFramesOk": true
+ },
+ "naming": {
+  "pattern": "%06d.webp from 000000",
+  "continuousAll": true
+ },
+ "retimeMethods": {
+  "M01": "setpts x0.8 + fps=30",
+  "M02": "setpts x1.0 + fps=30",
+  "M03": "setpts x0.9 + fps=30",
+  "M04": "setpts x0.8 + fps=30",
+  "M05": "setpts x1.0 + fps=30",
+  "M06": "trim first 6 source frames + setpts x1.0256 + fps=30",
+  "M07": "setpts x1.2 + minterpolate mci (true interpolation)",
+  "M08": "setpts x1.0 + fps=30",
+  "M09": "setpts x1.1 + minterpolate mci (true interpolation)",
+  "M10": "setpts x1.2 + minterpolate mci (true interpolation)",
+  "B01": "setpts x0.6 + fps=30",
+  "B02": "setpts x0.8 + fps=30",
+  "B03": "setpts x0.7 + fps=30",
+  "scale": "lanczos to 1920x1080 for all",
+  "webp": "libwebp quality 82 method 4"
+ },
+ "framePaddingEvents": [
+  {
+   "segment": "M07",
+   "produced": 357,
+   "target": 360,
+   "fix": "末帧复制补齐 3 帧（357-359）"
+  },
+  {
+   "segment": "M09",
+   "produced": 328,
+   "target": 330,
+   "fix": "末帧复制补齐 2 帧（328-329）"
+  },
+  {
+   "segment": "M10",
+   "produced": 357,
+   "target": 360,
+   "fix": "末帧复制补齐 3 帧（357-359）"
+  }
+ ],
+ "anchors": {
+  "A-ROT": {
+   "segment": "M05",
+   "localStart": 180,
+   "localEnd": 209,
+   "branch": "B01",
+   "webp": "anchors/A-ROT.webp",
+   "png": "anchors/A-ROT.png",
+   "webp_md5": "d0fa744aa02e5ad42bf033133aca8ae7",
+   "webp_sha256": "dc4f6e38878b4541463a93250ffc7c9a00c6c4496ec79dc3fc7c85c773c90b20",
+   "png_md5": "0aaa325446c7ac186d057bad66ab49f2",
+   "range_md5_unique": [
+    "d0fa744aa02e5ad42bf033133aca8ae7"
+   ],
+   "range_all_equal_anchor": true
+  },
+  "A-FLY": {
+   "segment": "M07",
+   "localStart": 240,
+   "localEnd": 269,
+   "branch": "B02",
+   "webp": "anchors/A-FLY.webp",
+   "png": "anchors/A-FLY.png",
+   "webp_md5": "8d0557f03026d384c90ccf23a7692985",
+   "webp_sha256": "fb4d7b26ac5cfc08ea0005a1133e77ba27a8b79d2d55dfe58c279828509ba7a3",
+   "png_md5": "3909ffe29cb4f8c1a9053cfa301c7ef8",
+   "range_md5_unique": [
+    "8d0557f03026d384c90ccf23a7692985"
+   ],
+   "range_all_equal_anchor": true
+  },
+  "A-STN": {
+   "segment": "M08",
+   "localStart": 210,
+   "localEnd": 239,
+   "branch": "B03",
+   "webp": "anchors/A-STN.webp",
+   "png": "anchors/A-STN.png",
+   "webp_md5": "d0a95ed50466b8b66a03633b2b621b48",
+   "webp_sha256": "cc15066babfaa7b55a618e58e80de5ef8db64bac575fdeedc2f14057a2079a39",
+   "png_md5": "3d109f397fed7c2c383ee33912494d1f",
+   "range_md5_unique": [
+    "d0a95ed50466b8b66a03633b2b621b48"
+   ],
+   "range_all_equal_anchor": true
+  }
+ },
+ "anchorRangeConsistency": {
+  "A-ROT": true,
+  "A-FLY": true,
+  "A-STN": true
+ },
+ "branchFrame0": {
+  "B01": {
+   "anchor": "A-ROT",
+   "frame0_md5": "d0fa744aa02e5ad42bf033133aca8ae7",
+   "equals_anchor": true
+  },
+  "B02": {
+   "anchor": "A-FLY",
+   "frame0_md5": "8d0557f03026d384c90ccf23a7692985",
+   "equals_anchor": true
+  },
+  "B03": {
+   "anchor": "A-STN",
+   "frame0_md5": "d0a95ed50466b8b66a03633b2b621b48",
+   "equals_anchor": true
+  }
+ },
+ "anchorPngWebpPixelCheck": {
+  "A-ROT": {
+   "pixel_equal": true,
+   "max_abs_diff": 0
+  },
+  "A-FLY": {
+   "pixel_equal": true,
+   "max_abs_diff": 0
+  },
+  "A-STN": {
+   "pixel_equal": true,
+   "max_abs_diff": 0
+  }
+ },
+ "boundaries": [
+  "anchors/boundaries/seam_M01_tail_local239.png",
+  "anchors/boundaries/seam_M02_head_local000.png",
+  "anchors/boundaries/seam_M02_tail_local299.png",
+  "anchors/boundaries/seam_M03_head_local000.png",
+  "anchors/boundaries/seam_M03_tail_local269.png",
+  "anchors/boundaries/seam_M04_head_local000.png",
+  "anchors/boundaries/seam_M04_tail_local239.png",
+  "anchors/boundaries/seam_M05_head_local000.png",
+  "anchors/boundaries/seam_M05_tail_local299.png",
+  "anchors/boundaries/seam_M06_head_local000.png",
+  "anchors/boundaries/seam_M06_tail_local299.png",
+  "anchors/boundaries/seam_M07_head_local000.png",
+  "anchors/boundaries/seam_M07_tail_local359.png",
+  "anchors/boundaries/seam_M08_head_local000.png",
+  "anchors/boundaries/seam_M08_tail_local299.png",
+  "anchors/boundaries/seam_M09_head_local000.png",
+  "anchors/boundaries/seam_M09_tail_local329.png",
+  "anchors/boundaries/seam_M10_head_local000.png",
+  "anchors/boundaries/B01_tail_local179.png",
+  "anchors/boundaries/B02_tail_local239.png",
+  "anchors/boundaries/B03_tail_local209.png",
+  "anchors/boundaries/A-ROT_in_local179.png",
+  "anchors/boundaries/A-ROT_out_local210.png",
+  "anchors/boundaries/A-FLY_in_local239.png",
+  "anchors/boundaries/A-FLY_out_local270.png",
+  "anchors/boundaries/A-STN_in_local209.png",
+  "anchors/boundaries/A-STN_out_local240.png"
+ ],
+ "posters": {
+  "M01": {
+   "from_local_frame": 200,
+   "md5": "1970b86465b0e15743a650fb29334254"
+  },
+  "M02": {
+   "from_local_frame": 299,
+   "md5": "e7a64bdd61a96348fa8fa65818297e7d"
+  },
+  "M03": {
+   "from_local_frame": 200,
+   "md5": "b870ffb9dc92f50b4e5d4604435c0b8e"
+  },
+  "M04": {
+   "from_local_frame": 239,
+   "md5": "d96dbe7ab07d3844544cf01c61a43e65"
+  },
+  "M05": {
+   "from_local_frame": 180,
+   "md5": "d0fa744aa02e5ad42bf033133aca8ae7"
+  },
+  "M06": {
+   "from_local_frame": 150,
+   "md5": "abd288ca4975277454e90171e9bf6213"
+  },
+  "M07": {
+   "from_local_frame": 240,
+   "md5": "8d0557f03026d384c90ccf23a7692985"
+  },
+  "M08": {
+   "from_local_frame": 210,
+   "md5": "d0a95ed50466b8b66a03633b2b621b48"
+  },
+  "M09": {
+   "from_local_frame": 329,
+   "md5": "4214a625aa0145a535d15cdf767eb6cc"
+  },
+  "M10": {
+   "from_local_frame": 180,
+   "md5": "0c4e6b90e19dfaef6c598f46e1b20bf4"
+  },
+  "B01": {
+   "from_local_frame": 90,
+   "md5": "0508cbddca3fe96c745721f09034ff34"
+  },
+  "B02": {
+   "from_local_frame": 120,
+   "md5": "9afc8e8a3a0ae86649a63267619dfb7e"
+  },
+  "B03": {
+   "from_local_frame": 150,
+   "md5": "d2f4a0ae44558dafe0b131a096f56080"
+  }
+ },
+ "hotspotFiles": {
+  "A-ROT": {
+   "file": "hotspots/A-ROT.json",
+   "frames": 30,
+   "allVisible": true,
+   "allClickable": true
+  },
+  "A-FLY": {
+   "file": "hotspots/A-FLY.json",
+   "frames": 30,
+   "allVisible": true,
+   "allClickable": true
+  },
+  "A-STN": {
+   "file": "hotspots/A-STN.json",
+   "frames": 30,
+   "allVisible": true,
+   "allClickable": true
+  }
+ },
+ "manifestFieldChecklist_PDF03_s4": {
+  "schemaVersion": true,
+  "aircraftIdentityId": true,
+  "globalFps": true,
+  "chapters": true,
+  "segments": true,
+  "branches": true,
+  "anchors": true,
+  "hotspots": true,
+  "renderVariants": true,
+  "loadingPriority": true,
+  "integrity": true,
+  "content": true,
+  "status": true
+ },
+ "manifestAllFieldsPresent": true,
+ "totalFrameBytes": 272599374,
+ "seamReview": "见 qc/acceptance-report.md 第 5 节（执行者目视拼图核查，证据 qc/seam_contact_sheet.png 与 anchors/boundaries/）",
+ "deviations": [
+  "D-P3-01",
+  "D-P3-02",
+  "D-P3-03",
+  "D-P3-04",
+  "D-P3-05",
+  "D-P3-06",
+  "D-P3-07"
+ ]
+}
