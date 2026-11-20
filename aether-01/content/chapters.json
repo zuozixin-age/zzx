@@ -1,1 +1,161 @@
-{"aircraftIdentityId":"AETHER-01-BIBLE-v1","chapters":[{"branches":[],"dom":{"heading":"AETHER-01","intro":"这是一台为概念演示而设计的电动垂直起降飞行器。本站所有画面均由视频帧序列驱动：滚动即飞行进度，文字与参数由真实页面内容承载。","scrollCue":"向下滚动，开始显形","subheading":"原创 eVTOL 概念展示"},"globalEndFrame":239,"globalStartFrame":0,"id":"CH01","index":1,"lighting":"BLUE HOUR","progressRange":[0.0,0.08],"segments":["M01"],"title":"序幕·机库显形"},{"branches":[],"dom":{"body":"高翼布局、对称 V 型尾翼、六组倾转旋翼——主翼四组、V 尾两组，每组五片桨叶。珍珠白流线型机身配深石墨灰推进舱，半哑光复合材料质感。环绕镜头依次展示翼面、尾翼与推进布局的完整轮廓。","heading":"整体构型"},"globalEndFrame":809,"globalStartFrame":240,"id":"CH02","index":2,"lighting":"BLUE HOUR","progressRange":[0.08,0.27],"segments":["M02","M03"],"title":"亮相·绕机环视"},{"branches":["B01"],"dom":{"body":"推进舱绕固定机械铰接轴整体倾转：桨盘水平时提供垂直升力，桨盘朝前时提供巡航推力，倾转过程中舱体外形、尺寸与连接点保持不变。点击旋翼热点可进入推进舱近景支线。","heading":"倾转机制","hotspotEntry":{"anchorId":"A-ROT","branchId":"B01","label":"进入旋翼近景"},"techRiskNote":"概念演示说明：倾转机构的作动冗余、失效安全与气动干扰是真实倾转旋翼飞行器公认的工程难点；本片仅作原理性视觉示意，不代表任何已验证的工程结论。"},"globalEndFrame":1349,"globalStartFrame":810,"id":"CH03","index":3,"lighting":"BLUE HOUR","progressRange":[0.27,0.45],"segments":["M04","M05"],"title":"细节·旋翼倾转"},{"branches":["B02"],"dom":{"body":"六组旋翼以水平桨盘垂直升空，离地后推进舱逐步倾转，升力由旋翼过渡到机翼，飞行器进入固定翼巡航。点击空中热点可进入 360° 绕飞支线。","heading":"垂直起飞与巡航","hotspotEntry":{"anchorId":"A-FLY","branchId":"B02","label":"进入空中绕飞"},"sceneBoundaryNote":"场景边界：起飞、穿城与绕飞画面为概念渲染，用于演示飞行阶段与构图，不对应任何真实航线、空域或运营时刻表。"},"globalEndFrame":2009,"globalStartFrame":1350,"id":"CH04","index":4,"lighting":"GOLDEN HOUR","progressRange":[0.45,0.67],"segments":["M06","M07"],"title":"起飞·穿城飞行"},{"branches":["B03"],"dom":{"body":"屋顶起降站进近、悬停对准、垂直下降接地。站点规划需统筹起降坪荷载与净空、乘客流线与充电设施、安全隔离与噪声管理、消防与应急通道；本章只作规划层面的概念示意，具体指标一律待核实。点击站点热点可进入降落近景支线。","heading":"垂直起降站","hotspotEntry":{"anchorId":"A-STN","branchId":"B03","label":"进入降落近景"}},"globalEndFrame":2639,"globalStartFrame":2010,"id":"CH05","index":5,"lighting":"GOLDEN HOUR","progressRange":[0.67,0.88],"segments":["M08","M09"],"title":"站点·降落"},{"branches":[],"dom":{"feasibility":"技术可行性（原理层面）：分布式电推进与倾转过渡是公开 eVTOL 行业共同探索的技术路线；具体到本概念机型的性能、认证与成本结论，需可靠来源逐条核实后方可填写，本页统一以「待核实」占位（见 references.json）。","footer":"AETHER-01 · 原创概念展示 — 本站为概念演示作品，不对应任何真实产品、认证或运营承诺。全部性能参数以「待核实」标注。","heading":"参数与可行性","marketNote":"应用与市场可行性：城市空中交通的应用场景与商业模式仍在验证期，本页不给出未经核实的市场数字。","parametersRef":"content/parameters.json","referencesRef":"content/references.json"},"globalEndFrame":2999,"globalStartFrame":2640,"id":"CH06","index":6,"lighting":"GOLDEN HOUR → BLUE HOUR（片内渐变）","progressRange":[0.88,1.0],"segments":["M10"],"title":"参数与收尾"}],"globalFps":30,"note":"章节划分与进度区间按 PDF01 第 4 节冻结；起止帧为重组后主线全局帧号（0-based），与 PDF03 冻结时间轴一致。DOM 文案只描述概念设计本身，一切性能数字见 parameters.json（统一「待核实」）。","schemaVersion":"1.0"}
+{
+  "aircraftIdentityId": "AETHER-01-BIBLE-v1",
+  "chapters": [
+    {
+      "branches": [],
+      "dom": {
+        "heading": "AETHER-01",
+        "intro": "这是一台为概念演示而设计的电动垂直起降飞行器。本站所有画面均由视频帧序列驱动：滚动即飞行进度，文字与参数由真实页面内容承载。",
+        "scrollCue": "向下滚动，开始显形",
+        "subheading": "原创 eVTOL 概念展示"
+      },
+      "globalEndFrame": 239,
+      "globalStartFrame": 0,
+      "id": "CH01",
+      "index": 1,
+      "lighting": "BLUE HOUR",
+      "progressRange": [
+        0.0,
+        0.08
+      ],
+      "segments": [
+        "M01"
+      ],
+      "title": "序幕·机库显形"
+    },
+    {
+      "branches": [],
+      "dom": {
+        "body": "高翼布局、对称 V 型尾翼、六组倾转旋翼——主翼四组、V 尾两组，每组五片桨叶。珍珠白流线型机身配深石墨灰推进舱，半哑光复合材料质感。环绕镜头依次展示翼面、尾翼与推进布局的完整轮廓。",
+        "heading": "整体构型"
+      },
+      "globalEndFrame": 809,
+      "globalStartFrame": 240,
+      "id": "CH02",
+      "index": 2,
+      "lighting": "BLUE HOUR",
+      "progressRange": [
+        0.08,
+        0.27
+      ],
+      "segments": [
+        "M02",
+        "M03"
+      ],
+      "title": "亮相·绕机环视"
+    },
+    {
+      "branches": [
+        "B01"
+      ],
+      "dom": {
+        "body": "推进舱绕固定机械铰接轴整体倾转：桨盘水平时提供垂直升力，桨盘朝前时提供巡航推力，倾转过程中舱体外形、尺寸与连接点保持不变。点击旋翼热点可进入推进舱近景支线。",
+        "heading": "倾转机制",
+        "hotspotEntry": {
+          "anchorId": "A-ROT",
+          "branchId": "B01",
+          "label": "进入旋翼近景"
+        },
+        "techRiskNote": "概念演示说明：倾转机构的作动冗余、失效安全与气动干扰是真实倾转旋翼飞行器公认的工程难点；本片仅作原理性视觉示意，不代表任何已验证的工程结论。"
+      },
+      "globalEndFrame": 1349,
+      "globalStartFrame": 810,
+      "id": "CH03",
+      "index": 3,
+      "lighting": "BLUE HOUR",
+      "progressRange": [
+        0.27,
+        0.45
+      ],
+      "segments": [
+        "M04",
+        "M05"
+      ],
+      "title": "细节·旋翼倾转"
+    },
+    {
+      "branches": [
+        "B02"
+      ],
+      "dom": {
+        "body": "六组旋翼以水平桨盘垂直升空，离地后推进舱逐步倾转，升力由旋翼过渡到机翼，飞行器进入固定翼巡航。点击空中热点可进入 360° 绕飞支线。",
+        "heading": "垂直起飞与巡航",
+        "hotspotEntry": {
+          "anchorId": "A-FLY",
+          "branchId": "B02",
+          "label": "进入空中绕飞"
+        },
+        "sceneBoundaryNote": "场景边界：起飞、穿城与绕飞画面为概念渲染，用于演示飞行阶段与构图，不对应任何真实航线、空域或运营时刻表。"
+      },
+      "globalEndFrame": 2009,
+      "globalStartFrame": 1350,
+      "id": "CH04",
+      "index": 4,
+      "lighting": "GOLDEN HOUR",
+      "progressRange": [
+        0.45,
+        0.67
+      ],
+      "segments": [
+        "M06",
+        "M07"
+      ],
+      "title": "起飞·穿城飞行"
+    },
+    {
+      "branches": [
+        "B03"
+      ],
+      "dom": {
+        "body": "屋顶起降站进近、悬停对准、垂直下降接地。站点规划需统筹起降坪荷载与净空、乘客流线与充电设施、安全隔离与噪声管理、消防与应急通道；本章只作规划层面的概念示意，具体指标一律待核实。点击站点热点可进入降落近景支线。",
+        "heading": "垂直起降站",
+        "hotspotEntry": {
+          "anchorId": "A-STN",
+          "branchId": "B03",
+          "label": "进入降落近景"
+        }
+      },
+      "globalEndFrame": 2639,
+      "globalStartFrame": 2010,
+      "id": "CH05",
+      "index": 5,
+      "lighting": "GOLDEN HOUR",
+      "progressRange": [
+        0.67,
+        0.88
+      ],
+      "segments": [
+        "M08",
+        "M09"
+      ],
+      "title": "站点·降落"
+    },
+    {
+      "branches": [],
+      "dom": {
+        "feasibility": "技术可行性：倾转旋翼＋分布式电推进的技术路线已有真实机型验证——与本机同构型的 Joby S4（六组五叶倾转旋翼、高翼、V 型尾翼）已完成大量试飞，正处于美国 FAA 型号合格审定后期，符合性飞机已进入局方试飞；亿航 EH216-S 则已集齐中国民航局型号合格证、标准适航证、生产许可证与运营合格证四证，进入商业化运营阶段，说明这类构型的工程实现与取证路径都已走通。监管框架也在补齐：FAA 于 2024 年 10 月发布 powered-lift 飞行员认证与运行规则（SFAR No. 120）。仍然存在的硬约束主要有三处：电池能量密度限制航程与商载；倾转过渡段的飞行控制与失效安全验证周期长、成本高；起降站、充电与空域管理等基础设施尚在建设期。本机 AETHER-01 自身的性能结论仍须逐条核实（见上方参数表），本节只作技术路线层面的可行性判断。",
+        "footer": "AETHER-01 · 原创概念展示 — 本站为概念演示作品，不对应任何真实产品、认证或运营承诺。全部性能参数以「待核实」标注。",
+        "heading": "参数与可行性",
+        "marketNote": "应用场景与市场可行性：典型应用场景包括城市与城际空中出租车、机场接驳、低空观光以及应急医疗、物流等公共服务——本站第 4、5 章演示的正是「市区飞行—垂直起降站」空中出租车场景；亿航已率先在广州、合肥等地围绕观光等场景开展商业运营探索。市场层面，据《中国低空经济发展研究报告（2024）》，2023 年中国低空经济规模达 5,059.5 亿元（同比增长 33.8%），赛迪顾问预计 2026 年突破万亿元，其中 eVTOL 细分产业规模预计由 2023 年约 9.8 亿元增至 2026 年约 95 亿元，政策与资本推动明显。但载人 eVTOL 的票价水平、单座成本与运力规模尚未经过大规模运营验证，欧洲先行者 Lilium、Volocopter 已先后于 2024 年末申请破产保护，商业模式风险依然很高。本节只给方向性判断，不对本机给出未经核实的市场数字。",
+        "parametersRef": "content/parameters.json",
+        "referencesRef": "content/references.json"
+      },
+      "globalEndFrame": 2999,
+      "globalStartFrame": 2640,
+      "id": "CH06",
+      "index": 6,
+      "lighting": "GOLDEN HOUR → BLUE HOUR（片内渐变）",
+      "progressRange": [
+        0.88,
+        1.0
+      ],
+      "segments": [
+        "M10"
+      ],
+      "title": "参数与收尾"
+    }
+  ],
+  "globalFps": 30,
+  "note": "章节划分与进度区间按 PDF01 第 4 节冻结；起止帧为重组后主线全局帧号（0-based），与 PDF03 冻结时间轴一致。DOM 文案只描述概念设计本身，一切性能数字见 parameters.json（统一「待核实」）。",
+  "schemaVersion": "1.0"
+}

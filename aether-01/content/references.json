@@ -1,1 +1,109 @@
-{"aircraftIdentityId":"AETHER-01-BIBLE-v1","claims":[{"claim":"飞行性能数字（速度/航程/续航/载客/重量/噪声等）","source":null,"status":"待核实"},{"claim":"适航认证与监管结论","source":null,"status":"待核实"},{"claim":"售价、运营成本与市场规模数字","source":null,"status":"待核实"},{"claim":"技术可行性的定量结论","source":null,"status":"待核实（页面仅保留原理层面定性表述）"},{"claim":"应用与市场可行性的定量结论","source":null,"status":"待核实（页面仅保留定性占位表述）"}],"notice":"按 PDF03/PDF04 要求：内容须区分「原创概念演示」与「对公开 eVTOL 技术的研究」。下列来源仅为本项目内部制作文件，支撑外观锁定、章节结构与素材规格；一切对外技术/市场结论暂无可引来源，统一标「待核实」，须由用户提供或另行查证可靠来源并逐条注明出处后方可写入页面。","schemaVersion":"1.0","sources":[{"id":"SRC-01","status":"项目内部来源","supports":"飞机外观锁定、两套光照、六章视觉结构与进度区间","title":"交接包 PDF01《创意方案与飞机外观圣经》","type":"项目内部制作文件"},{"id":"SRC-02","status":"项目内部来源","supports":"M01–M10、B01–B03 分镜、时长与锚点规划","title":"交接包 PDF02《13 条视频分镜与提示词》","type":"项目内部制作文件"},{"id":"SRC-03","status":"项目内部来源","supports":"冻结主线时间轴、锚点帧号、资产目录与 Manifest 规格","title":"交接包 PDF03《素材交付、拆帧与接缝验收》","type":"项目内部制作文件"},{"id":"SRC-04","status":"项目内部来源","supports":"章节 DOM 内容清单与交互验收条件","title":"交接包 PDF04《前端实现与验收》","type":"项目内部制作文件"},{"id":"SRC-05","status":"项目内部来源","supports":"构型描述（高翼/V 尾/6 组倾转旋翼×5 叶）与数据边界","title":"references/aircraft-bible.md（AETHER-01-BIBLE-v1）","type":"项目内部冻结文件"}]}
+{
+  "aircraftIdentityId": "AETHER-01-BIBLE-v1",
+  "claims": [
+    {
+      "claim": "对标机型 Joby S4 的性能参数与适航进度",
+      "source": "SRC-06",
+      "status": "已注明公开来源"
+    },
+    {
+      "claim": "亿航 EH216-S 适航取证与运营进度",
+      "source": "SRC-07",
+      "status": "已注明公开来源"
+    },
+    {
+      "claim": "中国低空经济与 eVTOL 细分市场规模",
+      "source": "SRC-08",
+      "status": "已注明公开来源"
+    },
+    {
+      "claim": "美国 powered-lift 监管规则框架",
+      "source": "SRC-09",
+      "status": "已注明公开来源"
+    },
+    {
+      "claim": "欧洲先行者 Lilium、Volocopter 破产保护事件",
+      "source": "SRC-10",
+      "status": "已注明公开来源"
+    },
+    {
+      "claim": "AETHER-01 本机的性能、售价与认证结论",
+      "source": null,
+      "status": "待核实（原创概念机无真实数据，不编造）"
+    }
+  ],
+  "notice": "本页信息分三类并逐类标注：① 本机构型等设计冻结事实，来自项目内部文件（SRC-01～05）；② 对标机型与行业的公开数据，逐条注明来源（SRC-06～10），仅用于横向参照与背景分析，不构成本机数据；③ 本机尚无可靠来源的性能、认证与商业参数，统一标「待核实」，不以推测或画面信息填充。",
+  "schemaVersion": "1.0",
+  "sources": [
+    {
+      "id": "SRC-01",
+      "status": "项目内部来源",
+      "supports": "飞机外观锁定、两套光照、六章视觉结构与进度区间",
+      "title": "交接包 PDF01《创意方案与飞机外观圣经》",
+      "type": "项目内部制作文件"
+    },
+    {
+      "id": "SRC-02",
+      "status": "项目内部来源",
+      "supports": "M01–M10、B01–B03 分镜、时长与锚点规划",
+      "title": "交接包 PDF02《13 条视频分镜与提示词》",
+      "type": "项目内部制作文件"
+    },
+    {
+      "id": "SRC-03",
+      "status": "项目内部来源",
+      "supports": "冻结主线时间轴、锚点帧号、资产目录与 Manifest 规格",
+      "title": "交接包 PDF03《素材交付、拆帧与接缝验收》",
+      "type": "项目内部制作文件"
+    },
+    {
+      "id": "SRC-04",
+      "status": "项目内部来源",
+      "supports": "章节 DOM 内容清单与交互验收条件",
+      "title": "交接包 PDF04《前端实现与验收》",
+      "type": "项目内部制作文件"
+    },
+    {
+      "id": "SRC-05",
+      "status": "项目内部来源",
+      "supports": "构型描述（高翼/V 尾/6 组倾转旋翼×5 叶）与数据边界",
+      "title": "references/aircraft-bible.md（AETHER-01-BIBLE-v1）",
+      "type": "项目内部冻结文件"
+    },
+    {
+      "id": "SRC-06",
+      "status": "公开来源",
+      "supports": "对标机型 Joby S4 的构型、性能参数（速度/航程/载客/噪声）与 FAA 审定进度",
+      "title": "Joby Aviation 官方发布（2020-01-15）及 evtol.news《Joby S4 2.0 机型档案》",
+      "type": "企业官方发布与行业机型数据库"
+    },
+    {
+      "id": "SRC-07",
+      "status": "公开来源",
+      "supports": "EH216-S 于 2023 年 10 月获型号合格证、2023 年 12 月获标准适航证、2024 年 4 月获生产许可证、2025 年 3 月运营公司获运营合格证的时间线",
+      "title": "中国民航局适航审定公开信息与亿航智能官方适航历程",
+      "type": "监管机构与企业官方信息"
+    },
+    {
+      "id": "SRC-08",
+      "status": "公开来源",
+      "supports": "2023 年中国低空经济规模 5,059.5 亿元、增速 33.8%，及 2026 年规模与 eVTOL 细分市场预测",
+      "title": "《中国低空经济发展研究报告（2024）》（赛迪顾问）及中国民航局发布数据",
+      "type": "行业研究报告"
+    },
+    {
+      "id": "SRC-09",
+      "status": "公开来源",
+      "supports": "FAA 于 2024 年 10 月发布 powered-lift 飞行员认证与运行最终规则，监管框架补齐",
+      "title": "美国 FAA《Integration of Powered-Lift: Pilot Certification and Operations》最终规则（SFAR No. 120，2024 年 10 月）",
+      "type": "监管机构正式规则"
+    },
+    {
+      "id": "SRC-10",
+      "status": "公开来源",
+      "supports": "Lilium 于 2024 年 10 月、Volocopter 于 2024 年 12 月先后申请破产保护，行业商业化风险案例",
+      "title": "International Finance、The Verge 等公开报道（2024 年）",
+      "type": "公开新闻报道"
+    }
+  ]
+}

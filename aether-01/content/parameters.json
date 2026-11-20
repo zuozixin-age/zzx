@@ -1,1 +1,192 @@
-{"aircraftIdentityId":"AETHER-01-BIBLE-v1","groups":[{"id":"configuration","items":[{"key":"整体布局","status":"设计锁定","value":"高翼 + 对称 V 型尾翼 + 倾转旋翼"},{"key":"旋翼组数","status":"设计锁定","value":"6 组（主翼 4 组 + V 尾 2 组）"},{"key":"每组桨叶数","status":"设计锁定","value":"5 叶"},{"key":"机身","status":"设计锁定","value":"珍珠白流线型一体机身"},{"key":"推进舱","status":"设计锁定","value":"深石墨灰，半哑光复合材料"},{"key":"起落架","status":"设计锁定","value":"三点式轮式（停机/悬停放下，巡航收起）"}],"title":"构型（设计冻结）"},{"id":"performance","items":[{"key":"最大速度","status":"待核实","value":"待核实"},{"key":"巡航速度","status":"待核实","value":"待核实"},{"key":"最大航程","status":"待核实","value":"待核实"},{"key":"续航时间","status":"待核实","value":"待核实"},{"key":"载客量","status":"待核实","value":"待核实"},{"key":"最大起飞重量","status":"待核实","value":"待核实"},{"key":"旋翼直径","status":"待核实","value":"待核实"},{"key":"悬停/巡航噪声","status":"待核实","value":"待核实"},{"key":"充电时间","status":"待核实","value":"待核实"}],"title":"性能参数"},{"id":"certification","items":[{"key":"适航认证状态","status":"待核实","value":"待核实"},{"key":"预计取证时间","status":"待核实","value":"待核实"},{"key":"运营许可","status":"待核实","value":"待核实"}],"title":"认证与监管"},{"id":"commercial","items":[{"key":"预计售价","status":"待核实","value":"待核实"},{"key":"运营成本","status":"待核实","value":"待核实"},{"key":"票价水平","status":"待核实","value":"待核实"},{"key":"量产/交付计划","status":"待核实","value":"待核实"}],"title":"商业与运营"}],"notice":"AETHER-01 为原创概念展示机型（aircraft-bible.md §1、§8 数据边界）。「构型」组为设计冻结事实（来自一致性圣经）；其余性能、认证、商业参数一律「待核实」占位，只能由用户给出或另行查证可靠来源后填写，禁止以视频画面推断。","schemaVersion":"1.0"}
+{
+  "aircraftIdentityId": "AETHER-01-BIBLE-v1",
+  "groups": [
+    {
+      "id": "configuration",
+      "items": [
+        {
+          "key": "整体布局",
+          "status": "设计锁定",
+          "value": "高翼 + 对称 V 型尾翼 + 倾转旋翼"
+        },
+        {
+          "key": "旋翼组数",
+          "status": "设计锁定",
+          "value": "6 组（主翼 4 组 + V 尾 2 组）"
+        },
+        {
+          "key": "每组桨叶数",
+          "status": "设计锁定",
+          "value": "5 叶"
+        },
+        {
+          "key": "机身",
+          "status": "设计锁定",
+          "value": "珍珠白流线型一体机身"
+        },
+        {
+          "key": "推进舱",
+          "status": "设计锁定",
+          "value": "深石墨灰，半哑光复合材料"
+        },
+        {
+          "key": "起落架",
+          "status": "设计锁定",
+          "value": "三点式轮式（停机/悬停放下，巡航收起）"
+        }
+      ],
+      "title": "构型（设计冻结）"
+    },
+    {
+      "id": "benchmark",
+      "title": "对标机型：Joby S4（公开资料，非本机数据）",
+      "items": [
+        {
+          "key": "机型 / 厂家",
+          "status": "公开来源",
+          "value": "Joby S4 / Joby Aviation（美国）"
+        },
+        {
+          "key": "构型",
+          "status": "公开来源",
+          "value": "六组倾转旋翼（每组五叶）＋高翼＋V 型尾翼，与本机同属倾转旋翼路线"
+        },
+        {
+          "key": "载客量",
+          "status": "公开来源",
+          "value": "1 名飞行员＋4 名乘客"
+        },
+        {
+          "key": "最大速度",
+          "status": "公开来源",
+          "value": "约 322 km/h（200 mph）"
+        },
+        {
+          "key": "最大航程",
+          "status": "公开来源",
+          "value": "约 241 km（150 英里，单次充电）"
+        },
+        {
+          "key": "最大起飞重量",
+          "status": "公开来源",
+          "value": "约 2,400 kg"
+        },
+        {
+          "key": "最大商载",
+          "status": "公开来源",
+          "value": "约 454 kg（1,000 lb）"
+        },
+        {
+          "key": "噪声（厂家口径）",
+          "status": "公开来源",
+          "value": "巡航飞越约 45 dBA（500 m 处）；起降约 65 dBA（100 m 处）"
+        },
+        {
+          "key": "适航进度",
+          "status": "公开来源",
+          "value": "处于 FAA 型号合格审定后期，符合性飞机已进入局方试飞；尚未取得型号合格证"
+        }
+      ]
+    },
+    {
+      "id": "performance",
+      "items": [
+        {
+          "key": "最大速度",
+          "status": "待核实",
+          "value": "待核实"
+        },
+        {
+          "key": "巡航速度",
+          "status": "待核实",
+          "value": "待核实"
+        },
+        {
+          "key": "最大航程",
+          "status": "待核实",
+          "value": "待核实"
+        },
+        {
+          "key": "续航时间",
+          "status": "待核实",
+          "value": "待核实"
+        },
+        {
+          "key": "载客量",
+          "status": "待核实",
+          "value": "待核实"
+        },
+        {
+          "key": "最大起飞重量",
+          "status": "待核实",
+          "value": "待核实"
+        },
+        {
+          "key": "旋翼直径",
+          "status": "待核实",
+          "value": "待核实"
+        },
+        {
+          "key": "悬停/巡航噪声",
+          "status": "待核实",
+          "value": "待核实"
+        },
+        {
+          "key": "充电时间",
+          "status": "待核实",
+          "value": "待核实"
+        }
+      ],
+      "title": "性能参数"
+    },
+    {
+      "id": "certification",
+      "items": [
+        {
+          "key": "适航认证状态",
+          "status": "待核实",
+          "value": "待核实"
+        },
+        {
+          "key": "预计取证时间",
+          "status": "待核实",
+          "value": "待核实"
+        },
+        {
+          "key": "运营许可",
+          "status": "待核实",
+          "value": "待核实"
+        }
+      ],
+      "title": "认证与监管"
+    },
+    {
+      "id": "commercial",
+      "items": [
+        {
+          "key": "预计售价",
+          "status": "待核实",
+          "value": "待核实"
+        },
+        {
+          "key": "运营成本",
+          "status": "待核实",
+          "value": "待核实"
+        },
+        {
+          "key": "票价水平",
+          "status": "待核实",
+          "value": "待核实"
+        },
+        {
+          "key": "量产/交付计划",
+          "status": "待核实",
+          "value": "待核实"
+        }
+      ],
+      "title": "商业与运营"
+    }
+  ],
+  "notice": "AETHER-01 为原创概念展示机型（aircraft-bible.md §1、§8 数据边界）。「构型」组为本机设计冻结事实；「对标机型」组为第三方真实机型的公开数据，逐项注明来源（见 references.json），仅供横向参照，不构成本机性能；其余本机性能、认证、商业参数一律「待核实」占位，须由可靠来源逐条查证后方可填写，禁止以视频画面推断。",
+  "schemaVersion": "1.0"
+}
